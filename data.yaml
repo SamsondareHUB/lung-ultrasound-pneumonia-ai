@@ -1,0 +1,6 @@
+path: /content/LUS-BALD_extracted/LUS-BALD
+train: train/images
+val: val/images
+
+names:
+  0: vertical_artifact
