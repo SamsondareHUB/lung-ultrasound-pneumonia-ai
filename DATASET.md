@@ -3,28 +3,39 @@
 ## Dataset name
 COVIDx-US
 
-## Source
+## Dataset repository
 https://github.com/nrc-cnrc/COVID-US
 
-## Intended task
-Binary classification using video-level labels:
-- Pneumonia
-- Normal
+## Dataset description
+The repository reports 242 lung-ultrasound videos in four categories:
+COVID-19, Pneumonia, Normal, and Other. The reported video counts include
+49 Pneumonia videos and 28 Normal videos.
 
-COVID-19 and other lung-condition cases are excluded from this first experiment.
+The repository does not host the underlying ultrasound videos; it describes
+data collected from multiple external sources.
 
-## Label definitions
-Use the labels provided in the official COVIDx-US metadata. Do not create labels from individual frames or infer diagnoses from image appearance.
+## Proposed task
+If data access and permitted use are confirmed, investigate a binary
+classification experiment using the repository's Pneumonia and Normal labels.
+Do not include COVID-19 or Other cases in this initial task.
 
-## Data and split plan
-- Keep dataset files outside this GitHub repository.
-- Split by video before extracting frames.
-- Keep all frames from one video in only one split.
-- Record video counts per class for training, validation, and test sets before training.
-- Do not use COVID-19 or "Other" cases in the initial binary experiment.
+## Split plan
+- Split by video, never by extracted frame.
+- Keep every frame from one video in a single split.
+- Document the exact video IDs and class counts for each split.
+- Do not begin model training until the permitted data sources and labels
+  have been verified.
 
-## Usage and license
-The COVIDx-US repository is distributed under AGPL-3.0, but the underlying data come from multiple sources with different or unclear permissions. Review the dataset README and the terms for each source before downloading, using, or sharing data. Do not redistribute images or videos unless their terms permit it.
+## Usage and permissions
+The COVIDx-US repository is licensed under GPL-3.0, but the underlying
+videos come from multiple sources with differing terms. The repository
+identifies some sources with Creative Commons licenses and others without
+license information. Verify permission from each source for the intended
+research use before downloading, using, or sharing any video.
 
-## Known limitations
-The dataset is small and assembled from multiple sources. Results may not generalize to other hospitals, devices, or patient populations. This is an educational prototype and is not for clinical diagnosis.
+Do not redistribute videos or derived data unless the applicable terms allow it.
+
+## Limitations
+The dataset is small and combines multiple sources. Results may not generalize
+to other hospitals, devices, or patient populations. This is an educational
+prototype, not a clinically validated diagnostic tool.
