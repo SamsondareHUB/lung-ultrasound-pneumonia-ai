@@ -1,52 +1,25 @@
 # Dataset Notes
 
 ## Dataset name
-COVIDx-US
+Lung Ultrasound Imaging Dataset for Accurate Detection and Localization of LUS Vertical Artifacts (LUS-BALD), Version 2
 
-## Dataset repository
-https://github.com/nrc-cnrc/COVID-US
+## Source
+https://data.mendeley.com/datasets/h923m366sf/2
 
-## Dataset description
-The repository reports 242 lung-ultrasound videos in four categories:
-COVID-19, Pneumonia, Normal, and Other. The reported video counts include
-49 Pneumonia videos and 28 Normal videos.
+## Dataset summary
+The dataset contains 401 high-resolution lung-ultrasound images from 255 patients at Mulago and Kiruddu National Referral Hospitals in Uganda. Polygon annotations identify lung-ultrasound vertical artifacts.
 
-The repository does not host the underlying ultrasound videos; it describes
-data collected from multiple external sources.
+## Intended task
+Detect and localize annotated vertical artifacts commonly referred to as B-lines. This project does not classify or diagnose pneumonia.
 
-## Proposed task
-If data access and permitted use are confirmed, investigate a binary
-classification experiment using the repository's Pneumonia and Normal labels.
-Do not include COVID-19 or Other cases in this initial task.
+## License and attribution
+The dataset is listed under Creative Commons Attribution 4.0 International (CC BY 4.0). Follow the license requirements, cite the dataset DOI (10.17632/h923m366sf.2), and credit the dataset contributors when using or sharing permitted material.
 
-## Split plan
-- Split by video, never by extracted frame.
-- Keep every frame from one video in a single split.
-- Document the exact video IDs and class counts for each split.
-- Do not begin model training until the permitted data sources and labels
-  have been verified.
-
-## Usage and permissions
-
-The COVID-US repository is an open-source project under AGPL-3.0. This does not
-automatically grant permission to use every underlying video.
-
-The COVID-US README lists these source terms:
-- The POCUS Atlas: CC BY-NC 4.0.
-- LITFL: CC BY-NC-SA 4.0.
-- Radiopaedia: CC BY-NC-SA 3.0.
-- ButterflyNetwork, GrepMed, CoreUltrasound, and Clarius: no data-use license
-  information is listed in the COVID-US README.
-
-For the first experiment, exclude sources without explicit data-use terms.
-Before using any other video, verify its source page, attribution requirements,
-license conditions, and whether the planned research and any sharing are allowed.
-Do not upload source videos, extracted frames, or derived data to this repository.
-
-This project is educational and non-clinical. Ask the relevant rights holder or
-institution if the intended use or license conditions are unclear.
+## Data handling
+- Keep downloaded images outside this GitHub repository.
+- Inspect the annotation format before selecting a model.
+- If patient identifiers are available, split by patient so images from one patient do not appear across multiple splits.
+- Do not upload images, annotations, or derived data unless permitted by the dataset terms.
 
 ## Limitations
-The dataset is small and combines multiple sources. Results may not generalize
-to other hospitals, devices, or patient populations. This is an educational
-prototype, not a clinically validated diagnostic tool.
+Vertical artifacts are ultrasound findings, not a diagnosis of pneumonia. They can be associated with multiple pulmonary conditions. This educational prototype is not clinically validated and must not guide diagnosis or treatment.
