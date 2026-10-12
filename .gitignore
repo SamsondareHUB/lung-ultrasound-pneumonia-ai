@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Local datasets and model outputs
+data/
+datasets/
+checkpoints/
+models/
+*.pt
+*.pth
+
+# Secrets
+.env
