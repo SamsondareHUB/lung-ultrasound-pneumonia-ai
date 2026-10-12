@@ -1,30 +1,34 @@
 # Project Plan
 
 ## Project title
-AI-Assisted Pneumonia Classification from Lung Ultrasound Images
+B-Line Detection in Lung Ultrasound Images Using Deep Learning
 
 ## Project goal
-Build a simple educational computer-vision prototype that classifies lung-ultrasound images into two categories: pneumonia and normal.
+Build an educational computer-vision prototype that detects and localizes B-line artifacts in lung-ultrasound images using annotated data.
 
 ## Project question
-Can a pretrained image-classification model learn to distinguish pneumonia-associated from normal lung-ultrasound images in a held-out test set?
+Can a pretrained object-detection model identify annotated B-line regions in held-out lung-ultrasound images?
+
+## Proposed dataset
+LUS-BALD: a dataset of lung-ultrasound images with polygon annotations of vertical artifacts. Verify the dataset files, patient identifiers, and license conditions before using the data.
 
 ## Scope
-- Begin with image classification, not video diagnosis.
-- Use a pretrained model as a baseline.
-- Treat predictions as experimental outputs, not medical diagnoses.
-- Do not upload patient images or dataset files to this repository.
+- Focus on detecting/localizing B-line artifacts, not diagnosing pneumonia.
+- Start with a pretrained object-detection model.
+- Split by patient before training if patient identifiers are available.
+- Do not upload dataset images or derived images to this repository.
+- Treat this as an educational prototype, not a clinical tool.
 
 ## Initial workflow
-1. Inspect the dataset and document its labels and permitted use.
-2. Split data by patient or video before extracting frames.
-3. Train a pretrained model on the training set.
-4. Use the validation set to make development decisions.
-5. Evaluate once on the held-out test set.
-6. Build a simple demo only after evaluation.
+1. Inspect the dataset documentation, files, annotations, and usage terms.
+2. Confirm how polygon annotations should be converted for the selected model.
+3. Create patient-level train, validation, and test splits if patient IDs are available.
+4. Train a pretrained baseline model.
+5. Evaluate localization on held-out patients using suitable detection metrics.
+6. Record experiments and limitations.
 
 ## Evaluation
-Report a confusion matrix, precision, recall, F1-score, and balanced accuracy. Record the patient- or video-level split method and any limitations.
+Choose detection metrics after inspecting the annotation format. Report the patient-level split method, class definitions, and any limitations.
 
 ## Safety and limitations
-This is an educational research prototype, not a clinically validated medical device. It must not be used to diagnose, treat, or make decisions about a person’s health.
+This project does not diagnose pneumonia or any other disease. B-lines can occur in different pulmonary conditions. The prototype is not clinically validated and must not guide diagnosis or treatment.
