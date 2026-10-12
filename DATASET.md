@@ -1,25 +1,30 @@
 # Dataset Notes
 
 ## Dataset name
-To be confirmed
+COVIDx-US
 
 ## Source
-To be added after verifying the dataset source
+https://github.com/nrc-cnrc/COVID-US
 
 ## Intended task
-Binary classification: pneumonia-associated lung-ultrasound images versus normal images.
+Binary classification using video-level labels:
+- Pneumonia
+- Normal
+
+COVID-19 and other lung-condition cases are excluded from this first experiment.
 
 ## Label definitions
-To be confirmed from the dataset documentation. Do not assume that every infection label means the same thing as pneumonia.
+Use the labels provided in the official COVIDx-US metadata. Do not create labels from individual frames or infer diagnoses from image appearance.
 
 ## Data and split plan
-- Keep the original data outside this repository.
-- Split by patient or video before extracting frames.
-- Keep training, validation, and test data separate.
-- Record the split method and counts here before training.
+- Keep dataset files outside this GitHub repository.
+- Split by video before extracting frames.
+- Keep all frames from one video in only one split.
+- Record video counts per class for training, validation, and test sets before training.
+- Do not use COVID-19 or "Other" cases in the initial binary experiment.
 
 ## Usage and license
-To be checked before downloading, using, or sharing the data.
+The COVIDx-US repository is distributed under AGPL-3.0, but the underlying data come from multiple sources with different or unclear permissions. Review the dataset README and the terms for each source before downloading, using, or sharing data. Do not redistribute images or videos unless their terms permit it.
 
 ## Known limitations
-To be completed after inspecting the dataset. This project is educational and is not for clinical diagnosis.
+The dataset is small and assembled from multiple sources. Results may not generalize to other hospitals, devices, or patient populations. This is an educational prototype and is not for clinical diagnosis.
