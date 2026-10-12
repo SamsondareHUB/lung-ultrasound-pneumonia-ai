@@ -27,13 +27,24 @@ Do not include COVID-19 or Other cases in this initial task.
   have been verified.
 
 ## Usage and permissions
-The COVIDx-US repository is licensed under GPL-3.0, but the underlying
-videos come from multiple sources with differing terms. The repository
-identifies some sources with Creative Commons licenses and others without
-license information. Verify permission from each source for the intended
-research use before downloading, using, or sharing any video.
 
-Do not redistribute videos or derived data unless the applicable terms allow it.
+The COVID-US repository is an open-source project under AGPL-3.0. This does not
+automatically grant permission to use every underlying video.
+
+The COVID-US README lists these source terms:
+- The POCUS Atlas: CC BY-NC 4.0.
+- LITFL: CC BY-NC-SA 4.0.
+- Radiopaedia: CC BY-NC-SA 3.0.
+- ButterflyNetwork, GrepMed, CoreUltrasound, and Clarius: no data-use license
+  information is listed in the COVID-US README.
+
+For the first experiment, exclude sources without explicit data-use terms.
+Before using any other video, verify its source page, attribution requirements,
+license conditions, and whether the planned research and any sharing are allowed.
+Do not upload source videos, extracted frames, or derived data to this repository.
+
+This project is educational and non-clinical. Ask the relevant rights holder or
+institution if the intended use or license conditions are unclear.
 
 ## Limitations
 The dataset is small and combines multiple sources. Results may not generalize
